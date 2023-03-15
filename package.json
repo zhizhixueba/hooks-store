@@ -1,0 +1,29 @@
+{
+  "name": "hooks-store",
+  "version": "0.0.1",
+  "description": "基于React Hooks开发一套状态管理组件",
+  "main": "index.d.ts",
+  "scripts": {},
+  "keywords": [
+    "hooks",
+    "react",
+    "state",
+    "state",
+    "hooks-store"
+  ],
+  "author": {
+    "name": "DongXian",
+    "email": "zhizhixueba@outlook.com",
+    "description": "基于React Hooks开发一套状态管理组件",
+    "url": "https://github.com/zhizhixueba/hooks-store.git"
+  },
+  "homepage": "https://github.com/zhizhixueba/hooks-store",
+  "bugs": {
+    "url": "https://github.com/zhizhixueba/hooks-store/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhizhixueba/hooks-store.git"
+  },
+  "license": "ISC"
+}
