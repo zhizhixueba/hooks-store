@@ -4,7 +4,7 @@
  * Desc: 导出
  */
 
-export { default as DataWidget } from './DataWidget'
-export { default as Datagram } from './Datagram'
-export { default as StateComponent } from './StateComponent'
-export { default as Store } from './Store'
+export { default as DataWidget } from "./src/DataWidget";
+export { default as Datagram } from "./src/Datagram";
+export { default as StateComponent } from "./src/StateComponent";
+export { default as Store } from "./src/Store";

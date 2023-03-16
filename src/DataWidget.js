@@ -12,7 +12,6 @@ const DataWidget = (props) => {
   const [value, setValue] = useState(data);
 
   useEffect(() => {
-
     const datagram = props.data;
 
     // 这里可以对数据包装一下，主要是对错误兼容

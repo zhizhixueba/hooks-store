@@ -4,18 +4,23 @@
  * Desc:
  */
 
+interface ErrorInfo {
+  // Captures which component contained the exception, and its ancestors.
+  componentStack: string;
+}
+
 declare class Store {
-  onCreate(props): void;
+  onCreate(props: any): void;
 
   onShow(): void;
 
-  getBeforeUpdate(prevProps, prevState): void;
+  getBeforeUpdate(prevProps: any, prevState: any): void;
 
-  onUpdate(prevProps, prevState, snapshot): void;
+  onUpdate(prevProps: any, prevState: any, snapshot: any): void;
 
-  onCatch(error, errorInfo): void;
+  onCatch(error: Error, errorInfo: ErrorInfo): void;
 
-  shouldUpdate(nextProps, nextState, nextContext): boolean;
+  shouldUpdate(nextProps: any, nextState: any, nextContext: any): boolean;
 
   onDestroy(): void;
 }

@@ -6,7 +6,7 @@
 
 import React from "react";
 
-export default class StoreComponent extends React.PureComponent {
+export default class StateComponent extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -49,7 +49,7 @@ export default class StoreComponent extends React.PureComponent {
 
   componentWillUnmount() {
     if (this._store) {
-      this._store.onDestory();
+      this._store.onDestroy();
     }
   }
 
