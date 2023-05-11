@@ -1,12 +1,12 @@
 # hooks-store
 
-基于hooks开发的一套状态管理工具.
+基于 hooks 开发的一套状态管理工具.
 
 特点：
-- 1.数据及业务逻辑与View的分离
+
+- 1.数据及业务逻辑与 View 的分离
 - 2.类组件，与函数式组件均可使用
 - 3.简单轻量化
-
 
 ### 使用
 
@@ -15,7 +15,7 @@
 ```js
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
-import {StateComponent, DataWidget} from '../src/hooks-store/index';
+import {StateComponent, DataWidget} from 'hooks-widget';
 import ProjectStore from './ProjectStore';
 
 let store = null;
@@ -54,7 +54,7 @@ export default FunctionPage;
 
 /**  =============== */
 
-// 
+//
 import { Store, Datagram } from "../src/hooks-store/index"
 
 export default class ProjectStore extends Store {
@@ -71,7 +71,6 @@ export default class ProjectStore extends Store {
 }
 
 ```
-
 
 - 类组件
 
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
 
 /**  =============== */
 
-// 
+//
 import { Store, Datagram } from "../src/hooks-store/index"
 
 export default class ProjectStore extends Store {

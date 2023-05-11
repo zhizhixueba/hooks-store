@@ -1,11 +1,11 @@
 /**
  * Author: Meng
- * Date: 2023-
+ * Date: 2022-08-23
  * Desc: 
  * 1.可以加一些自定义的函数，或做一些特定功能
  */
 
-export default class Store {
+export default class LiveData {
 
   onCreate = (props) => { }
 
