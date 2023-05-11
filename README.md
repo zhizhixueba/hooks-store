@@ -1,4 +1,4 @@
-# hooks-store
+# hooks-liveData
 
 基于 hooks 开发的一套状态管理工具.
 
@@ -15,27 +15,27 @@
 ```js
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
-import {StateComponent, DataWidget} from 'hooks-widget';
-import ProjectStore from './ProjectStore';
+import {LiveComponent, HooksWidget} from 'hooks-widget';
+import DemoLiveData from './DemoLiveData';
 
-let store = null;
+let liveData = null;
 
-const FunctionPage = () => {
-  store = new ProjectStore();
-  return <StateComponent store={store} children={renderView} />;
+const DemoPage = () => {
+  liveData = new DemoLiveData();
+  return <LiveComponent liveData={liveData} children={renderView} />;
 };
 
 function renderView() {
   return (
     <View style={styles.page}>
-      <DataWidget data={store.curDate} child={dateView} />
+      <HooksWidget data={liveData.curDate} child={dateView} />
     </View>
   );
 };
 
 function dateView(date) {
   return (
-    <Button onPress={store.onChangeDate}>
+    <Button onPress={liveData.onChangeDate}>
       <Text style={styles.date}>{date}</Text>
     </Button>
   );
@@ -50,19 +50,18 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FunctionPage;
+export default DemoPage;
 
 /**  =============== */
 
-//
-import { Store, Datagram } from "../src/hooks-store/index"
+import { LiveData, Observer } from "hooks-widget"
 
-export default class ProjectStore extends Store {
+export default class DemoLiveData extends LiveData {
 
-  curDate = new Datagram(Date.now());
+  curDate = new Observer(Date.now());
 
   onCreate(props) {
-    console.log('===========> create: ProjectStore')
+    console.log('===========> create: DataLiveData')
   }
 
   onChangeDate = () => {
@@ -77,28 +76,29 @@ export default class ProjectStore extends Store {
 ```js
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
-import {StateComponent, DataWidget} from '../src/hooks-store/index';
-import ProjectStore from './ProjectStore';
+import {LiveComponent, HooksWidget} from 'hooks-widget';
+import DataLiveData from './DataLiveData';
 
-export default class ClassPage extends StateComponent {
+export default class ClassPage extends LiveComponent {
   constructor(props) {
     super(props);
-    this._store = new ProjectStore();
+    this.liveData = new DataLiveData();
   }
 
   render() {
     return (
       <View style={styles.container}>
-        {this.dateView()}
+        <HooksWidget data={liveData.curDate} child={this.dateView} />
       </View>
     );
   }
 
-  dateView = () => {
-    const date = this._store.curDate;
-    return <Button onPress={this._store.onChangeDate}>
-      <Text style={styles.date}>{date}</Text>
-    </Button>
+  dateView = (date) => {
+    return (
+      <Button onPress={this.liveData.onChangeDate}>
+        <Text style={styles.date}>{date}</Text>
+      </Button>
+    );
   }
 }
 
@@ -108,22 +108,20 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   date: {
-
     color: '#ff0099'
   }
 })
 
 /**  =============== */
 
-//
-import { Store, Datagram } from "../src/hooks-store/index"
+import { LiveData, Observer } from "hooks-widget"
 
-export default class ProjectStore extends Store {
+export default class DemoLiveData extends LiveData {
 
-  curDate = new Datagram(Date.now());
+  curDate = new Observer(Date.now());
 
   onCreate(props) {
-    console.log('===========> create: ProjectStore')
+    console.log('===========> create: DataLiveData')
   }
 
   onChangeDate = () => {
