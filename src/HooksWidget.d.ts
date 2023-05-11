@@ -8,12 +8,11 @@ import Observer from "./Observer";
 
 interface HooksWidgetProps {
   data: Observer;
-  child: React.ReactElement;
+  child: React.ReactElement| React.DetailedHTMLProps<any, any>;
 }
 
-declare class HooksWidgetBase extends React.Component<HooksWidgetProps> {}
+declare class HooksWidget extends React.Component<HooksWidgetProps> {}
 
-declare const HooksWidget: React.ReactElement<HooksWidgetProps> &
-  typeof HooksWidgetBase;
+// declare const HooksWidget: React.ReactElement<HooksWidgetProps> & typeof HooksWidgetBase;
 
 export default HooksWidget;

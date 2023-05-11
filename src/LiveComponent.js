@@ -6,7 +6,7 @@
 
 import React from "react";
 
-export default class LiveComponent extends React.PureComponent {
+export default class LiveComponent extends React.Component {
 
   constructor(props) {
     super(props);

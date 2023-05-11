@@ -9,12 +9,11 @@ import LiveData from "./LiveData";
 
 interface LiveComponentProps {
   liveData: LiveData;
-  children: React.ReactNode[] | React.ReactNode;
+  children: React.ReactNode[] | React.ReactNode | React.DetailedHTMLProps<any, any>[] | React.DetailedHTMLProps<any, any>;
 }
 
-declare class LiveComponentBase extends React.PureComponent<LiveComponentProps> {}
+declare class LiveComponent extends React.Component<LiveComponentProps> {}
 
-declare const LiveComponent: React.ReactElement<LiveComponentProps> &
-  typeof LiveComponentBase;
+// declare const LiveComponent: React.ReactElement<LiveComponentProps> & typeof LiveComponentBase;
 
 export default LiveComponent;
