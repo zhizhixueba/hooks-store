@@ -1,6 +1,6 @@
 {
   "name": "hooks-widget",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "基于React Hooks开发一套状态管理组件",
   "main": "index.d.ts",
   "scripts": {},

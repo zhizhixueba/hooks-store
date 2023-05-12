@@ -18,40 +18,40 @@ export default class LiveComponent extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    if (props.liveData) {
-      props.liveData.onCatch(error, errorInfo)
+    if (this._liveData) {
+      this._liveData.onCatch(error, errorInfo)
     }
   }
 
   componentDidMount() {
-    if (props.liveData) {
-      props.liveData.onReady();
+    if (this._liveData) {
+      this._liveData.onReady();
     }
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    if (props.liveData) {
-      props.liveData.getBeforeUpdate(prevProps, prevState)
+    if (this._liveData) {
+      this._liveData.getBeforeUpdate(prevProps, prevState)
     }
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (props.liveData) {
-      props.liveData.onUpdate(prevProps, prevState, snapshot);
+    if (this._liveData) {
+      this._liveData.onUpdate(prevProps, prevState, snapshot);
     }
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    if (props.liveData) {
-      return props.liveData.shouldUpdate(nextProps, nextState, nextContext);
+    if (this._liveData) {
+      return this._liveData.shouldUpdate(nextProps, nextState, nextContext);
     }else {
       return super.shouldComponentUpdate(nextProps, nextState, nextContext);
     }
   }
 
   componentWillUnmount() {
-    if (props.liveData) {
-      props.liveData.onDestroy();
+    if (this._liveData) {
+      this._liveData.onDestroy();
     }
   }
 
