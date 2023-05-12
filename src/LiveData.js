@@ -7,18 +7,18 @@
 
 export default class LiveData {
 
-  onLoad = (props) => { }
+  // onLoad = (props) => { }
 
-  onReady = () => { }
+  // onReady = () => { }
 
-  getBeforeUpdate = (prevProps, prevState) => { }
+  // getBeforeUpdate = (prevProps, prevState) => { }
 
-  onUpdate = (prevProps, prevState, snapshot) => { }
+  // onUpdate = (prevProps, prevState, snapshot) => { }
 
-  onCatch = (error, errorInfo) => { }
+  // onCatch = (error, errorInfo) => { }
 
-  shouldUpdate = (nextProps, nextState, nextContext) => { return true; }
+  // shouldUpdate = (nextProps, nextState, nextContext) => { return true; }
 
-  onDestroy = () => { }
+  // onDestroy = () => { }
 
 }
