@@ -7,9 +7,9 @@
 
 export default class LiveData {
 
-  onCreate = (props) => { }
+  onLoad = (props) => { }
 
-  onShow = () => { }
+  onReady = () => { }
 
   getBeforeUpdate = (prevProps, prevState) => { }
 
@@ -17,7 +17,7 @@ export default class LiveData {
 
   onCatch = (error, errorInfo) => { }
 
-  shouldUpdate = (nextProps, nextState, nextContext) => { }
+  shouldUpdate = (nextProps, nextState, nextContext) => { return true; }
 
   onDestroy = () => { }
 

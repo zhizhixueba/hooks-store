@@ -25,6 +25,13 @@ const DemoPage = () => {
   return <LiveComponent liveData={liveData} children={renderView} />;
 };
 
+const DemoPage2 = () => {
+  liveData = new DemoLiveData();
+  return <LiveComponent liveData={liveData}>
+    {renderView()}
+  </LiveComponent>;
+};
+
 function renderView() {
   return (
     <View style={styles.page}>

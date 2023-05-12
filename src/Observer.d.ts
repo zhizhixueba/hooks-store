@@ -11,9 +11,8 @@ declare class Observer<T> {
 
   next(data: T): void;
 
-  bind(func: (data: T) => void): void;
-
-  unbind(): void;
+  // bind(func: (data: T) => void): void;
+  // unbind(): void;
 }
 
 export default Observer;

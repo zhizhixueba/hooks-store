@@ -6,9 +6,9 @@
 
 declare class LiveData {
   
-  onCreate(props: any): void;
+  onLoad(props: any): void;
 
-  onShow(): void;
+  onReady(): void;
 
   getBeforeUpdate(prevProps: any, prevState: any): void;
 

@@ -16,14 +16,14 @@ export default class Observer {
   }
 
   update = (data) => {
-    this.next(data);
+    this.value = data;
+    this._listener && this._listener(data);
   }
 
   next = (data) => {
     const update = this._chilkData(data); // 这里可以自定义交验数据是否相当的规则
     if (update) {
-      this.value = data;
-      this._listener && this._listener(data);
+      this.update(data);
     }
   }
 
