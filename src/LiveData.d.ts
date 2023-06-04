@@ -5,7 +5,9 @@
  */
 
 declare class LiveData {
-  
+
+  constructor(props?: any);
+
   onLoad(props: any): void;
 
   onReady(): void;
@@ -19,6 +21,10 @@ declare class LiveData {
   shouldUpdate(nextProps: any, nextState: any, nextContext: any): boolean;
 
   onDestroy(): void;
+
+  addEvent(key: string, tag: string, callback: (data: any) => boolean|void): void;
+  sendEvent(key: string, dat: any): void;
+  // removeEvent(key: string, tag: string): void;
 }
 
 export default LiveData;
