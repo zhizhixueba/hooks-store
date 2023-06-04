@@ -4,7 +4,7 @@
  * Desc: 导出
  */
 
-export { default as Binder } from "./lib/Binder";
-export { default as LiveData } from "./lib/LiveData";
-export { default as HooksWidget } from "./lib/HooksWidget";
-export { default as LiveComponent } from "./lib/LiveComponent";
+export { default as Binder } from "./src/Binder";
+export { default as LiveData } from "./src/LiveData";
+export { default as HooksWidget } from "./src/HooksWidget";
+export { default as LiveComponent } from "./src/LiveComponent";
