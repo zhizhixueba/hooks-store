@@ -61,11 +61,11 @@ export default DemoPage;
 
 /**  =============== */
 
-import { LiveData, Observer } from "hooks-widget"
+import { LiveData, Binder } from "hooks-widget"
 
 export default class DemoLiveData extends LiveData {
 
-  curDate = new Observer(Date.now());
+  curDate = new Binder(Date.now());
 
   onCreate(props) {
     console.log('===========> create: DataLiveData')
@@ -121,11 +121,11 @@ const styles = StyleSheet.create({
 
 /**  =============== */
 
-import { LiveData, Observer } from "hooks-widget"
+import { LiveData, Binder } from "hooks-widget"
 
 export default class DemoLiveData extends LiveData {
 
-  curDate = new Observer(Date.now());
+  curDate = new Binder(Date.now());
 
   onCreate(props) {
     console.log('===========> create: DataLiveData')

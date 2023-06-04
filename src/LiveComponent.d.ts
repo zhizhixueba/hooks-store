@@ -14,6 +14,4 @@ interface LiveComponentProps {
 
 declare class LiveComponent extends React.Component<LiveComponentProps> {}
 
-// declare const LiveComponent: React.ReactElement<LiveComponentProps> & typeof LiveComponentBase;
-
 export default LiveComponent;

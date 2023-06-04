@@ -4,7 +4,7 @@
  * Desc:
  */
 import React from "react";
-import Observer from "./Observer";
+import Observer from "./Binder";
 
 interface HooksWidgetProps {
   data: Observer;
@@ -14,5 +14,4 @@ interface HooksWidgetProps {
 declare class HooksWidget extends React.Component<HooksWidgetProps> {}
 
 // declare const HooksWidget: React.ReactElement<HooksWidgetProps> & typeof HooksWidgetBase;
-
 export default HooksWidget;

@@ -4,7 +4,7 @@
  * Desc:
  */
 
-declare class Observer<T> {
+declare class Binder<T> {
   constructor(value: T);
 
   update(data: T): void;
@@ -15,4 +15,4 @@ declare class Observer<T> {
   // unbind(): void;
 }
 
-export default Observer;
+export default Binder;
