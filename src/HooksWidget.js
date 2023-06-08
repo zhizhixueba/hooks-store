@@ -13,13 +13,13 @@ const HooksWidget = (props) => {
   const [value, setValue] = useState(data);
 
   useEffect(() => {
-    const observer = props.data;
+    const liveData = props.data;
     // 这里可以对数据包装一下，主要是对错误兼容
-    observer.bind((msg) => {
+    liveData.bind((msg) => {
       setValue(msg);
     });
 
-    return observer.unbind;
+    return liveData.unbind;
   }, [props.data]);
 
   return props.child(value);

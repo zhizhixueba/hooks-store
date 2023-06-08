@@ -10,48 +10,48 @@ export default class LiveComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this._liveData = props.liveData;
+    this._liveModel = props.liveModel;
 
-    if (props.liveData && props.liveData.onLoad) {
-      props.liveData.onLoad(props);
+    if (props.liveModel && props.liveModel.onLoad) {
+      props.liveModel.onLoad(props);
     }
   }
 
   componentDidCatch(error, errorInfo) {
-    if (this._liveData && this._liveData.onCatch) {
-      this._liveData.onCatch(error, errorInfo)
+    if (this._liveModel && this._liveModel.onCatch) {
+      this._liveModel.onCatch(error, errorInfo)
     }
   }
 
   componentDidMount() {
-    if (this._liveData && this._liveData.onReady) {
-      this._liveData.onReady();
+    if (this._liveModel && this._liveModel.onReady) {
+      this._liveModel.onReady();
     }
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    if (this._liveData && this._liveData.getBeforeUpdate) {
-      this._liveData.getBeforeUpdate(prevProps, prevState)
+    if (this._liveModel && this._liveModel.getBeforeUpdate) {
+      this._liveModel.getBeforeUpdate(prevProps, prevState)
     }
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this._liveData && this._liveData.onUpdate) {
-      this._liveData.onUpdate(prevProps, prevState, snapshot);
+    if (this._liveModel && this._liveModel.onUpdate) {
+      this._liveModel.onUpdate(prevProps, prevState, snapshot);
     }
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    if (this._liveData && this._liveData.shouldUpdate) {
-      return this._liveData.shouldUpdate(nextProps, nextState, nextContext);
+    if (this._liveModel && this._liveModel.shouldUpdate) {
+      return this._liveModel.shouldUpdate(nextProps, nextState, nextContext);
     } else {
       return true;
     }
   }
 
   componentWillUnmount() {
-    if (this._liveData && this._liveData.onDestroy) {
-      this._liveData.onDestroy();
+    if (this._liveModel && this._liveModel.onDestroy) {
+      this._liveModel.onDestroy();
     }
   }
 

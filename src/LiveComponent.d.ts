@@ -5,10 +5,10 @@
  */
 
 import React from "react";
-import LiveData from "./LiveData";
+import LiveModel from "./LiveModel";
 
 interface LiveComponentProps {
-  liveData: LiveData;
+  liveModel: LiveModel;
   children: React.ReactNode[] | React.ReactNode | React.DetailedHTMLProps<any, any>[] | React.DetailedHTMLProps<any, any>;
 }
 

@@ -4,27 +4,15 @@
  * Desc:
  */
 
-declare class LiveData {
+declare class LiveData<T> {
+  constructor(value: T);
 
-  constructor(props?: any);
+  update(data: T): void;
 
-  onLoad(props: any): void;
+  next(data: T): void;
 
-  onReady(): void;
-
-  getBeforeUpdate(prevProps: any, prevState: any): void;
-
-  onUpdate(prevProps: any, prevState: any, snapshot: any): void;
-
-  onCatch(error: Error, errorInfo: any): void;
-
-  shouldUpdate(nextProps: any, nextState: any, nextContext: any): boolean;
-
-  onDestroy(): void;
-
-  addEvent(key: string, tag: string, callback: (data: any) => boolean|void): void;
-  sendEvent(key: string, dat: any): void;
-  // removeEvent(key: string, tag: string): void;
+  // bind(func: (data: T) => void): void;
+  // unbind(): void;
 }
 
 export default LiveData;

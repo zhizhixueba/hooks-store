@@ -4,10 +4,10 @@
  * Desc:
  */
 import React from "react";
-import Observer from "./Binder";
+import LiveData from "./LiveData";
 
 interface HooksWidgetProps {
-  data: Observer;
+  data: LiveData;
   child: React.ReactElement| React.DetailedHTMLProps<any, any>;
 }
 
