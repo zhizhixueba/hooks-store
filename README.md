@@ -1,4 +1,4 @@
-# hooks-liveData
+# hooks-liveModel
 
 基于 hooks 开发的一套状态管理工具.
 
@@ -16,18 +16,18 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {LiveComponent, HooksWidget} from 'hooks-widget';
-import DemoLiveData from './DemoLiveData';
+import DemoLiveModel from './DemoLiveModel';
 
-let liveData = null;
+let liveModel = null;
 
 const DemoPage = () => {
-  liveData = new DemoLiveData();
-  return <LiveComponent liveData={liveData} children={renderView} />;
+  liveModel = new DemoLiveModel();
+  return <LiveComponent liveModel={liveModel} children={renderView} />;
 };
 
 const DemoPage2 = () => {
-  liveData = new DemoLiveData();
-  return <LiveComponent liveData={liveData}>
+  liveModel = new DemoLiveModel();
+  return <LiveComponent liveModel={liveModel}>
     {renderView()}
   </LiveComponent>;
 };
@@ -35,14 +35,14 @@ const DemoPage2 = () => {
 function renderView() {
   return (
     <View style={styles.page}>
-      <HooksWidget data={liveData.curDate} child={dateView} />
+      <HooksWidget data={liveModel.curDate} child={dateView} />
     </View>
   );
 };
 
 function dateView(date) {
   return (
-    <Button onPress={liveData.onChangeDate}>
+    <Button onPress={liveModel.onChangeDate}>
       <Text style={styles.date}>{date}</Text>
     </Button>
   );
@@ -61,14 +61,14 @@ export default DemoPage;
 
 /**  =============== */
 
-import { LiveData, Binder } from "hooks-widget"
+import { LiveModel, LiveData } from "hooks-widget"
 
-export default class DemoLiveData extends LiveData {
+export default class DemoLiveModel extends LiveModel {
 
-  curDate = new Binder(Date.now());
+  curDate = new LiveData(Date.now());
 
   onCreate(props) {
-    console.log('===========> create: DataLiveData')
+    console.log('===========> create: DataLiveModel')
   }
 
   onChangeDate = () => {
@@ -84,25 +84,25 @@ export default class DemoLiveData extends LiveData {
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {LiveComponent, HooksWidget} from 'hooks-widget';
-import DataLiveData from './DataLiveData';
+import DataLiveModel from './DataLiveModel';
 
 export default class ClassPage extends LiveComponent {
   constructor(props) {
     super(props);
-    this.liveData = new DataLiveData();
+    this.liveModel = new DataLiveModel();
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <HooksWidget data={liveData.curDate} child={this.dateView} />
+        <HooksWidget data={liveModel.curDate} child={this.dateView} />
       </View>
     );
   }
 
   dateView = (date) => {
     return (
-      <Button onPress={this.liveData.onChangeDate}>
+      <Button onPress={this.liveModel.onChangeDate}>
         <Text style={styles.date}>{date}</Text>
       </Button>
     );
@@ -121,14 +121,14 @@ const styles = StyleSheet.create({
 
 /**  =============== */
 
-import { LiveData, Binder } from "hooks-widget"
+import { LiveModel, LiveData } from "hooks-widget"
 
-export default class DemoLiveData extends LiveData {
+export default class DemoLiveModel extends LiveModel {
 
-  curDate = new Binder(Date.now());
+  curDate = new LiveData(Date.now());
 
   onCreate(props) {
-    console.log('===========> create: DataLiveData')
+    console.log('===========> create: DataLiveModel')
   }
 
   onChangeDate = () => {
